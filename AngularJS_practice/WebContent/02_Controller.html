@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<meta charset="UTF-8">
+<title>Controller</title>
+<link rel="stylesheet"
+	href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular.min.js"></script>
+
+</head>
+<body>
+	<div class="well span6" ng-controller="PersonCtrl">
+		<label>Name:</label> <input type="text" ng-model="name"
+			placeholder="Enter a name here"> <br> <label>Age:</label>
+		<input type="text" ng-model="age" placeholder="Enter a number here">
+		<hr>
+		<h1>{{name}}</h1>
+		<h2>{{age}}</h2>
+	</div>
+
+	<script type="text/javascript">
+		var PersonCtrl = function($scope) {
+			$scope.name = '地板溼溼';
+			$scope.age = 24;
+			
+			//中文打到一半也會觸發 ( 打到_ )
+			$scope.$watch('name',function(){
+				console.log($scope.name);
+			});
+			
+			$scope.$watch('name',function(){
+				if($scope.age>18)
+					console.log('超過18歲了');
+			});
+		}
+	</script>
+</body>
+</html>

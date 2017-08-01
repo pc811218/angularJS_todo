@@ -1,0 +1,6 @@
+<ul>
+	<li ng-repeat="person in friends">
+		<a ng-href="#/edit/{{$index}}">[{{$index}}] {{ person.name }}</a>
+		$:{{person.reward | number}}
+	</li>
+</ul>

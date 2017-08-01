@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="CalApp">
+<head>
+<meta charset="UTF-8">
+<title>男丁格爾's 脫殼玩 - AngularJS</title>
+<link rel="stylesheet"
+	href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular.min.js"></script>
+
+</head>
+<body>
+	<form class="span5 form-inline" style="margin-top: 20px;"
+		ng-controller="CalCtrl">
+		<div class="alert alert-info">
+			<input type="number" class="input-small" ng-model="num1"> <span>*</span>
+			<input type="number" class="input-small" ng-model="num2" disabled>
+			<span>=</span> {{ num1 * num2}}
+		</div>
+	</form>
+
+	<script type="text/javascript">
+	var calApp = angular.module('CalApp', []);
+
+	calApp.controller('CalCtrl', function($scope){
+		$scope.num1 = 0;
+		$scope.num2 = 5;
+	});
+// 		var CalCtrl = function($scope) {
+// 			$scope.num1 = 3;
+// 			$scope.num2 = 5;
+
+// 		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+<head>
+<meta charset="UTF-8">
+<title>男丁格爾's 脫殼玩 - AngularJS</title>
+<link rel="stylesheet"
+	href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular.min.js"></script>
+
+</head>
+<body>
+	<div class="well span4" style="margin-top: 20px;" ng-controller="Ctrl">
+		{{ name }}</div>
+
+	<script type="text/javascript">
+		//*module
+		var myApp = angular.module('MyApp', []);
+		 
+		myApp.controller('Ctrl', ['$scope', function(mm){
+			mm.name = '(新)男丁格爾';
+		}]);
+
+		//*非module
+		// 		var Ctrl = function(a){
+		// 			a.name = '男丁格爾';
+		// 		};
+
+		// 		Ctrl.$inject = ['$scope'];
+	</script>
+</body>
+</html>

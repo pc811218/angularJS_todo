@@ -1,0 +1,19 @@
+<!doctype html>
+<html data-ng-app="MyApp">
+<head>
+	<meta charset="UTF-8">
+	<title>男丁格爾's 脫殼玩 - AngularJS</title>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js"></script>
+	<script src="js/23_controller2.js"></script>
+</head>
+<body>
+	<div class="well span4" style="margin-top:20px;" data-ng-controller="Ctrl">
+		{{ text | myFilter }}
+		<br>
+		{{text | clean:'+'}}
+		<br>
+		{{text | camel}}
+	</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<meta charset="UTF-8">
+<title>Hello AngularJS!</title>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular.min.js"></script>
+
+</head>
+<body>
+	<div class="well span6">
+		<label>Name:</label>
+		<input type="text" ng-model="hello" placeholder="Enter a name here">
+		<input type="text" ng-model="name" placeholder="Enter a name here">
+		<hr>
+<!-- 		<h1>Hello {{ name }}!!</h1> -->
+<!-- 		<h1>Hello {{ name || "AngularJS" }}</h1> -->
+			<h1>{{hello}} {{ name || "AngularJS" }}</h1>
+		
+	</div>
+</body>
+</html>

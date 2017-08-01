@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>男丁格爾's 脫殼玩 - AngularJS</title>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular.min.js"></script>
+
+</head>
+<body>
+<div class="well span4" style="margin-top:20px;" ng-init="myStyle={}">
+	<input type="button" class="btn btn-primary" value="Set" ng-click="myStyle={'color':'red', 'font-size':'14pt','background-color':'green','font-family':'標楷體'}">
+	<input type="button" class="btn btn-warning" value="Clear" ng-click="myStyle={}">
+	<br><br>
+	<div ng-style="myStyle">男丁格爾's 脫殼玩</div>
+	<pre >myStyle = {{ myStyle }}</pre >
+</div>
+</body>
+</html>

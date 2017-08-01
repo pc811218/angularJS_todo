@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>男丁格爾's 脫殼玩 - AngularJS</title>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular.min.js"></script>
+	<style type="text/css">
+		.friend-first-true {
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="well span6" style="margin-top:20px;" ng-controller="FriendsCtrl">
+		<label>Search:</label>
+		<input type="text" ng-model="search">
+		
+		<ul>
+<!-- 			ng-repeat="[each] in [array]"				$index表示索引值-->
+<!-- 			<li ng-repeat="friend in friends">index [{{$index}}]: {{friend}}</li> -->
+
+<!-- 			filter會搜尋friends，看有沒有包含ng-model所給的，有的話就取出來 -->
+			<li ng-repeat="friend in friends|filter:search">
+				index [{{$index}}]: {{friend.name}}({{friend.age}})
+				<span ng-show="$first" class="friend-first-{{$first}}">[第一筆]</span>
+				<span ng-show="$middle">[中間]</span>
+				<span ng-show="$last">[第後一筆]</span>
+			</li>
+<!-- 			<li>jelly</li> -->
+<!-- 			<li>梅干桑</li> -->
+<!-- 			<li>莫希爾</li> -->
+		</ul>
+	</div>
+	
+	<script type="text/javascript">
+	var FriendsCtrl = function($scope){
+		//$scope.friends = [ '男丁格爾', 'jelly', '梅干桑', '莫希爾' ];
+		$scope.friends = [
+			{ name: '男丁格爾', age: 18 }, 
+			{ name: 'jelly', age: 16 }, 
+			{ name: '梅干桑', age: 30 }, 
+			{ name: '莫希爾', age: 31 }
+		];
+	}
+	</script>
+</body>
+</html>

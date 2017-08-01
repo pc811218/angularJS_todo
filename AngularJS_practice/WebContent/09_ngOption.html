@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>男丁格爾's 脫殼玩 - AngularJS</title>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular.min.js"></script>
+
+</head>
+<body>
+<div class="span5" style="margin-top:20px;" ng-controller="SelectCtrl">
+	<div class="alert alert-info">
+<!-- 	[option的值(預設是member)] as [option要顯示的格式(Angular Expression)] {group by ?} for [宣告變數(index,option)]  in [array,obj] -->
+<!-- 		<select ng-model="role" ng-options="member+'::' for member in onepiece"> -->
+<!-- 		<select ng-model="role" ng-options="idx+'xxx' as member for (idx,member) in onepiece"> -->
+		<select ng-model="role" ng-options="member group by idx for (idx,member) in onepiece">
+			<option value="">--請選擇角色--</option>
+		</select>
+
+		<div ng-show="role!=''">選擇的是:{{ role }}</div>
+	</div>
+</div>
+
+
+
+<script type="text/javascript">
+	var SelectCtrl = function($scope) {
+		$scope.onepiece = [ '蒙其·D·魯夫', '羅羅亞·索隆', '娜美', '騙人布', '香吉士', '多尼多尼·喬巴', '妮可·羅賓', '佛朗基', '布魯克' ];
+	};
+</script>
+</body>
+</html>

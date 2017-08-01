@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>男丁格爾's 脫殼玩 - AngularJS</title>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular.min.js"></script>
+	<style>
+		.red {
+			color: red;
+		}
+		.bold {
+			font-weight: bold;
+		}
+		.italic {
+			font-style: italic;
+		}
+	</style>
+	
+</head>
+<body>
+<!-- 	<div class="well span4" style="margin-top:20px;" ng-init="cusClass='red';"> -->
+<!-- 		<div class="{{ cusClass }}">男丁格爾 angular.js</div> -->
+<!-- 	</div> -->
+
+<!-- 	<div class="well span4" style="margin-top:20px;" ng-init="cusClass='red';"> -->
+<!-- 		<div ng-class="cusClass">男丁格爾 angular.js</div> -->
+<!-- 	</div> -->
+
+<!-- 		陣列方式給值 -->
+<!-- 	<div class="well span4" style="margin-top:20px;" ng-init="red='red';bold='';italic='italic';"> -->
+<!-- 		<div ng-class="[red, bold, italic]">男丁格爾 angular.js</div> -->
+<!-- 	</div> -->
+
+<!-- 	物件方式給值 -->
+<!-- 	<div class="well span4" style="margin-top:20px;" ng-controller="Ctrl"> -->
+<!-- 		<div ng-class="cssObj[selectd]">男丁格爾 angular.js</div> -->
+<!-- 	</div> -->
+	
+<!-- 	物件特別用法  key是class名稱，value是boolean值-->
+	<div class="well span4" style="margin-top:20px;" ng-controller="Ctrl">
+		<label><input type="checkbox" ng-model="useRed" style="margin:0;"> Red?</label>
+		<label><input type="checkbox" ng-model="useBold" style="margin:0;"> Bold?</label>
+		<label><input type="checkbox" ng-model="useItalic" style="margin:0;"> Italic?</label>
+		<div ng-class="{ red: useRed, bold: useBold, italic: useItalic }">男丁格爾 angular.js</div>
+		<hr>
+<!-- 		小習題 -->
+<!-- 在使用 ng-class-even 及 ng-class-odd 時要特別注意的是，它們都是接受 Angular 表達式 -->
+<!-- (Angular Expressions)的，所以再指定值時，如果是字串的話，別忘了要多補上單引號或是雙引號。 -->
+		<div>
+			<div ng-class-even="'red'" ng-class-odd="'bold'" ng-repeat="letter in letters">{{letter}}</div>
+		</div>
+	</div>
+	
+
+	
+	<script type="text/javascript">
+		var Ctrl = function($scope){
+			$scope.cssObj = { 
+				useRed: 'red', 
+				useBold: 'bold', 
+				useItalic: 'italic'
+			};
+		 
+			$scope.selectd = 'useItalic';
+			
+			$scope.letters = ['a','b','c','d','e','f','g'];
+		};
+	</script>
+</body>
+</html>

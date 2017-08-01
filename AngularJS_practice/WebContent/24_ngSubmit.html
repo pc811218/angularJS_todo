@@ -1,0 +1,39 @@
+<!doctype html>
+<html ng-app="SkillsApp">
+<head>
+	<meta charset="UTF-8">
+	<title>男丁格爾's 脫殼玩 - AngularJS</title>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.min.js"></script>
+	<script src="js/24_controller.js"></script>
+</head>
+<body>
+<div class="well span4" ng-controller="SkillCtrl">
+	<form ng-submit="submit();">
+		<label>姓名:</label><input type="text" ng-model="name">
+		<label>年齡:</label><input type="number" ng-model="age">
+		<label>技能:</label><input type="text" ng-model="skill" placeholder="輸入你的能力">
+		<input type="submit" value="Add" class="btn btn-primary">
+	</form>
+	<hr>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>姓名</th>
+				<th>年齡</th>
+				<th>技能</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="person in people">
+				<td ng-bind="person.name"></td>
+				<td ng-bind="person.age"></td>
+				<td ng-bind="person.skill"></td>
+			</tr>
+		</tbody>
+	</table>
+<!-- 	技能= {{people}} -->
+</div>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+		<div class="row" ng-repeat="item in items | filter:isStatus track by $index">
+<!-- 			ng-model綁定在陣列中(items)每個物件(item)的屬性上(status) -->
+			<div class="col-md-1"><input type="checkbox" ng-model="item.status"></div> 
+<!-- 			顯示框 -->
+			<div class="col-md-10" ng-hide="isEdit" ng-dblclick="isEdit=true">
+				<b ng-class="{del:item.status}">{{item.content}}</b>
+			</div>
+<!-- 			顯示框 -->
+
+<!-- 			編輯框 -->
+			<div class="col-md-10" ng-show="isEdit" ng-init="isEdit=false">
+				<form ng-submit="isEdit=false"><b>
+					<input type="text" ng-model="item.content" todo-focus="isEdit==true" ng-blur="isEdit=false;isEmpty($index,item)">
+				</b></form>
+			</div>
+<!-- 			編輯框 -->
+			<div class="col-md-1"><button ng-click="remove($index)" class="close">&times;</button></div>
+			<br>
+		</div>

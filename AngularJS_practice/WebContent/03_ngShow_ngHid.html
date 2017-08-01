@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>ngShow 與 ngHide</title>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular.min.js"></script>
+</head>
+<body>
+	<div class="well span6" style="margin-top:20px;" ng-controller="ShowCtrl">
+		<label>Show?
+			<input type="checkbox" ng-model="checked">
+		</label>
+		<label>English?
+			<input type="checkbox" ng-model="eng" ng-true-value="peer.chou" ng-false-value="周柏元">
+		</label>
+		<hr>
+<!-- 		<h2 ng-show="checked">男丁格爾</h2> -->
+		<h2 ng-show="checked">{{eng}}</h2>
+	</div>
+	
+	<script type="text/javascript">
+// 	為何undefined在checked可以看成是false，在eng就對應不到、不會把undefined當成ng-false-value
+		var ShowCtrl = function($scope){
+			//$scope.checked = false;
+			$scope.eng = '周柏元';
+		}
+	</script>
+</body>
+</html>
+
